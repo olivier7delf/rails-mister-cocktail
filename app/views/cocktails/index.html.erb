@@ -4,10 +4,20 @@
   <%= link_to 'Créer votre fameux Cocktail !!', new_cocktail_path  %>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-4">
-
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
-      </div>
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="col-md-2" style="margin: 10px;">
+        <img src="<%= cocktail.image_url %>"
+         alt="Card image cap" class="img-responsive" style="width: 250px;height: 250px;">
+        <div class="carousel-caption" style="position: absolute; top:8px; left: 24px; font-size: 8px;" >
+          <h5><%= cocktail.name %></h5>
+          <ul>
+            <% cocktail.ingredients[0..2].each do |ingredient|%>
+              <li><%= ingredient.name %></li>
+            <% end %>
+          </ul>
+        </div>
+     </div>
+     <% end %>
     <% end %>
   </div>
 </div>
