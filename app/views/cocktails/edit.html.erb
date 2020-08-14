@@ -1,9 +1,8 @@
 <h1>Une idée cocktail ?!</h1>
 
 <%= simple_form_for @cocktail do |f| %>
- <%= f.input :name %>
  <%= f.input :photo, as: :file %>
- <%= f.submit "créer son cocktail !" %>
+ <%= f.submit "éditer son cocktail !" %>
 <% end %>
 
 <%= link_to "index", root_path, class: "btn btn-primary" %>

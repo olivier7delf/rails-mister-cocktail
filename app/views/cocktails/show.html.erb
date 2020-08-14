@@ -1,5 +1,11 @@
 <h2><%= @cocktail.name %></h2>
 
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%= link_to "edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-success" %>
+
 <% @cocktail.doses.each do |dose| %>
   <ul>
     <li>
@@ -9,7 +15,8 @@
     </li>
   </ul>
 <% end %>
-<%= link_to "new dose", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+
 
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -18,4 +25,4 @@
   <%= f.submit "add the description", class: "btn btn-primary" %>
 <% end %>
 
-<%= link_to "index", root_path %>
+<%= link_to "index", root_path, class: "btn btn-primary" %>
