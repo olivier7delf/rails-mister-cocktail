@@ -15,15 +15,63 @@
 
 
 body {
-  background: rgba(55,55,55, .1);
+  background: #031024;
 }
 
 
-.card {
+.img-nav {
+  height: 70px;
+  width: 100px;
+  margin-left: 10vh;
+  padding: 10px;
+}
 
+.home-img {
+  // position: relative;
+  width: 100vw;
+  height: 65vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  color: #A9684D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img h1 {
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  text-shadow: 1px 1px #031024;
+  &:hover {
+    font-size: 52px;
+  }
+}
+
+.btn-home-img {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &:hover {
+    font-size: 24px;
+  }
+}
+
+.card {
     width: 80%;
     height: 400px;
     background-size: cover;
     color: white;
     padding: 20px;
+    border-radius: 10px;
+}
+
+h5 {
+  color: white;
+}
+
+p, li {
+  color: white;
 }

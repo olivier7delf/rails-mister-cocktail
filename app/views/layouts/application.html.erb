@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <nav class="nav">
+      <%= link_to root_path do %>
+        <img src="<%= cl_image_path("xutizhpx48oa8fdqous8") %>" alt="" class="img-nav">
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
